@@ -1,19 +1,3 @@
-/* CSS Variables */
-:root {
-    /* Background Colors */
-    --bg-body: #FDFDFC;
-    --bg-showcase: #FCFCFC;
-    
-    /* Stroke Colors */
-    --stroke-showcase: #F2F2F2;
-    
-    /* Text Colors */
-    --text-primary: #111111;
-    --text-secondary: rgba(0, 0, 0, 0.4);
-    --text-hyperlink: #3E9FFF;
-    --text-hyperlink-hover: #006FDD;
-}
-
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -239,7 +223,7 @@ body {
     color: var(--text-hyperlink-hover);
 }
 
-/* Phone Showcase Component */
+/* Phone Showcase Component (структура как на benji.org/honkish) */
 .phone-showcase {
     width: 100%;
     margin: 0;
@@ -249,50 +233,90 @@ body {
     border-radius: 8px;
 }
 
-.phone-showcase__container {
+.phone-showcase__content {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0 16px;
 }
 
-.phone-showcase__mockup {
+.phone-showcase__phone-container {
     position: relative;
-    width: 100%;
-    max-width: 47vw;
 }
 
-.phone-showcase__frame {
+.phone-showcase__phone {
     position: relative;
-    width: 100%;
+    width: 227.5px;
+    height: 450px;
 }
 
 .phone-showcase__frame-img {
-    width: 100%;
-    height: auto;
     display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     position: relative;
     z-index: 2;
 }
 
-.phone-showcase__content {
+.phone-showcase__phone-content {
     position: absolute;
-    width: 84%;
-    height: 92%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 84%;
+    height: 92%;
     z-index: 1;
     overflow: hidden;
     border-radius: 16px;
 }
 
-.phone-showcase__content-img {
+.phone-showcase__player {
+    width: 100%;
+    height: 100%;
+}
+
+.phone-showcase__player-inner {
+    width: 100%;
+    height: 100%;
+}
+
+.phone-showcase__video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
     display: block;
+}
+
+/* Lottie внутри phone-showcase (Case 3 — без телефона) */
+.phone-showcase__lottie {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+}
+
+.phone-showcase__lottie svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Case 3: без паддингов, Lottie на весь блок */
+.phone-showcase--lottie {
+    padding: 0;
+    height: 400px;
+}
+
+.phone-showcase--lottie .phone-showcase__content {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.phone-showcase--lottie .phone-showcase__lottie {
+    width: 100%;
+    height: 100%;
+    max-width: none;
 }
 
 /* Footer */
@@ -347,6 +371,17 @@ body {
 
     .phone-showcase {
         padding: 4vw 6vw;
+    }
+
+    .phone-showcase__lottie {
+        max-width: 100%;
+        height: 70vw;
+        max-height: 360px;
+    }
+
+    .phone-showcase--lottie {
+        height: 70vw;
+        max-height: 360px;
     }
 }
 
