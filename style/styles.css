@@ -1,0 +1,459 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 400;
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Header */
+.header {
+    width: 100%;
+    margin: 24px 0 0;
+    padding: 0;
+}
+
+.header__name {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+    line-height: 21px;
+}
+
+.header__date {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    line-height: 21px;
+}
+
+/* About Text */
+.about-text {
+    width: 100%;
+    margin: 24px 0 0;
+    padding: 0;
+}
+
+.about-text__description {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+/* Main Video/Image */
+.main-video {
+    width: 100%;
+    height: 248px;
+    margin: 12px 0 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.main-video__image {
+    width: 340px;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 0;
+    display: block;
+    transform: translateX(-30px);
+}
+
+/* About Experience */
+.about-experience {
+    width: 100%;
+    margin: 12px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about-experience__text {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+.link {
+    color: var(--text-hyperlink);
+    text-decoration: underline;
+}
+
+.link:hover {
+    color: var(--text-hyperlink-hover);
+}
+
+
+/* Work History */
+.work-history {
+    width: 100%;
+    margin: 32px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.work-history__cell {
+    height: 45px;
+    padding: 0;
+    border-bottom: 1px solid var(--stroke-showcase);
+}
+
+.work-history__link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 16px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.work-history:hover .work-history__cell:not(:hover) .work-history__link,
+.work-history:hover .work-history__cell:not(:hover) .work-history__link .work-history__year,
+.work-history:hover .work-history__cell:not(:hover) .work-history__link .work-history__company,
+.work-history:hover .work-history__cell:not(:hover) .work-history__link .work-history__position {
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.work-history__year {
+    width: 103px;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    line-height: 21px;
+}
+
+.work-history__company {
+    flex: 1;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-primary);
+    line-height: 21px;
+}
+
+.work-history__position {
+    width: 103px;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    line-height: 21px;
+    text-align: right;
+}
+
+/* Work List */
+.work-list {
+    width: 100%;
+    margin: 100px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+}
+
+.work-list-block {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.work-list-block__img {
+    width: 100%;
+    padding: 0;
+}
+
+.work-list-block__image {
+    width: 100%;
+    height: 532px;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+.work-list-block__info {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.work-list-block__header {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--text-primary);
+    line-height: 21px;
+    margin-bottom: 16px;
+}
+
+.work-list-block__company {
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+
+.work-list-block__description {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-primary);
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.work-list-block__status {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    line-height: 21px;
+}
+
+.work-list-block__link {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-hyperlink);
+    text-decoration: underline;
+    line-height: 21px;
+    margin-bottom: 8px;
+}
+
+.work-list-block__link:hover {
+    color: var(--text-hyperlink-hover);
+}
+
+/* Phone Showcase Component (структура как на benji.org/honkish) */
+.phone-showcase {
+    width: 100%;
+    margin: 0;
+    padding: 40px 60px;
+    background: var(--bg-showcase);
+    border: 1px solid var(--stroke-showcase);
+    border-radius: 8px;
+}
+
+.phone-showcase__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.phone-showcase__phone-container {
+    position: relative;
+}
+
+.phone-showcase__phone {
+    position: relative;
+    width: 227.5px;
+    height: 450px;
+}
+
+.phone-showcase__frame-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: relative;
+    z-index: 2;
+}
+
+.phone-showcase__phone-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 84%;
+    height: 92%;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.phone-showcase__phone-content--video {
+    inset: 1.25% 3.3%;
+    width: auto;
+    height: auto;
+    top: auto;
+    left: auto;
+    transform: none;
+    border-radius: 7.5%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #000;
+}
+
+.phone-showcase__phone--credit .phone-showcase__phone-content--video {
+    inset: 4% 8%;
+    border-radius: 10%;
+}
+
+.phone-showcase__player {
+    width: 100%;
+    height: 100%;
+    background: #000;
+}
+
+.phone-showcase__phone-content--video .phone-showcase__player {
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.phone-showcase__phone-content--video[data-ready="true"] .phone-showcase__player {
+    opacity: 1;
+}
+
+.phone-showcase__player-inner {
+    width: 100%;
+    height: 100%;
+    background: #000;
+}
+
+.phone-showcase__video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.phone-showcase__phone--credit .phone-showcase__video {
+    object-position: center top;
+}
+
+/* Lottie внутри phone-showcase (Case 3 — без телефона) */
+.phone-showcase__lottie {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+}
+
+.phone-showcase__lottie svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Case 3: без паддингов, Lottie на весь блок */
+.phone-showcase--lottie {
+    padding: 0;
+    height: 400px;
+}
+
+.phone-showcase--lottie .phone-showcase__content {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.phone-showcase--lottie .phone-showcase__lottie {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+}
+
+/* Footer */
+.footer {
+    width: 100%;
+    margin: 97px 0 0;
+    padding: 0 0 54px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.footer__text {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-primary);
+    line-height: 21px;
+}
+
+.footer__subtext {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    line-height: 21px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header,
+    .about-text,
+    .main-video,
+    .about-experience,
+    .work-history,
+    .work-list,
+    .footer {
+        width: 100%;
+        padding: 0;
+    }
+
+    .main-video {
+        padding: 0;
+    }
+
+    .work-list {
+        gap: 60px;
+    }
+
+    .work-list-block__image {
+        height: auto;
+        max-height: 532px;
+    }
+
+    .phone-showcase {
+        padding: 4vw 6vw;
+    }
+
+    .phone-showcase__lottie {
+        max-width: 100%;
+        height: 70vw;
+        max-height: 360px;
+    }
+
+    .phone-showcase--lottie {
+        padding: 0;
+        height: 70vw;
+        max-height: 360px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header__name,
+    .header__date,
+    .about-text__description,
+    .about-experience__text,
+    .work-history__year,
+    .work-history__company,
+    .work-history__position,
+    .work-list-block__header,
+    .work-list-block__description,
+    .work-list-block__status,
+    .work-list-block__link,
+    .footer__text,
+    .footer__subtext {
+        font-size: 16px;
+    }
+
+    .work-list {
+        gap: 40px;
+    }
+}
