@@ -10,7 +10,10 @@ document.addEventListener('DOMContentLoaded', function () {
             renderer: 'svg',
             loop: true,
             autoplay: true,
-            path: 'assets/designsystemProfinansy.json'
+            path: 'assets/designsystemProfinansy.json',
+            rendererSettings: {
+                preserveAspectRatio: 'xMidYMid meet'
+            }
         });
     }
 });

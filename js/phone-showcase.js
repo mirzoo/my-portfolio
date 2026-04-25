@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var showcases = document.querySelectorAll('.phone-showcase__phone-content--video');
+    var showcases = document.querySelectorAll('.phone-showcase__phone-content--video, .phone-showcase--full-video');
 
     showcases.forEach(function (showcase) {
         var video = showcase.querySelector('video');

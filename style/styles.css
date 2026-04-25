@@ -254,6 +254,27 @@ body {
     padding: 0 16px;
 }
 
+.phone-showcase--full-video {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.phone-showcase__media-frame {
+    width: 550px;
+    height: 550px;
+    max-width: 100%;
+    background: #fcfcfc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
 .phone-showcase__phone-container {
     position: relative;
 }
@@ -304,6 +325,11 @@ body {
     border-radius: 10%;
 }
 
+.phone-showcase__phone--frameless .phone-showcase__phone-content--video {
+    inset: 0;
+    border-radius: 20px;
+}
+
 .phone-showcase__player {
     width: 100%;
     height: 100%;
@@ -327,6 +353,10 @@ body {
     background: #000;
 }
 
+.phone-showcase--full-video[data-ready="true"] {
+    opacity: 1;
+}
+
 .phone-showcase__video {
     width: 100%;
     height: 100%;
@@ -339,34 +369,40 @@ body {
     object-position: center top;
 }
 
+.phone-showcase__video--full {
+    width: auto;
+    height: 100%;
+    object-position: center center;
+    object-fit: contain;
+}
+
 /* Lottie внутри phone-showcase (Case 3 — без телефона) */
 .phone-showcase__lottie {
-    width: 100%;
-    max-width: 400px;
-    height: 400px;
+    width: min(100%, 518px);
+    height: min(100%, 532px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 .phone-showcase__lottie svg {
     width: 100%;
     height: 100%;
+    display: block;
 }
 
 /* Case 3: без паддингов, Lottie на весь блок */
 .phone-showcase--lottie {
     padding: 0;
-    height: 400px;
-}
-
-.phone-showcase--lottie .phone-showcase__content {
-    padding: 0;
-    width: 100%;
-    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .phone-showcase--lottie .phone-showcase__lottie {
-    width: 100%;
-    height: 100%;
-    max-width: none;
+    max-width: 518px;
+    max-height: 532px;
 }
 
 /* Footer */
@@ -434,6 +470,12 @@ body {
         height: 70vw;
         max-height: 360px;
     }
+
+    .phone-showcase__media-frame {
+        width: 100%;
+        height: min(550px, calc(100vw - 12vw));
+    }
+
 }
 
 @media (max-width: 480px) {
